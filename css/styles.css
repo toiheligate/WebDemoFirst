@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.divider-nav-menu {
+  border-left: 1px solid #ababab;
+  height: 8px;
+  width: 0;
+  margin: 0 1rem;
+}
+
+/* Khi ở màn hình nhỏ (dưới 768px) */
+@media (max-width: 767.98px) {
+  .divider-nav-menu {
+    border-left: none; /* Bỏ đường viền dọc */
+    border-top: 1px solid #ababab; /* Thêm đường viền ngang */
+    width: 100%; /* Cho đường chia nằm ngang toàn bộ chiều rộng */
+    height: 1px; /* Đặt chiều cao cho đường chia ngang */
+    margin: 0.5rem 0; /* Thêm khoảng cách trên dưới nếu cần */
+  }
+}
