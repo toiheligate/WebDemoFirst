@@ -10,11 +10,23 @@ body {
   box-sizing: border-box;
 }
 
+.main-container {
+  padding-left: 88px;
+  padding-right: 88px;
+}
+
+.logo-text {
+  padding-left: 16px;
+}
+
+.nav-right-menu {
+  padding-right: 48px;
+}
+
 .divider-nav-menu {
   border-left: 1px solid #ababab;
   height: 8px;
   width: 0;
-  margin: 0 1rem;
 }
 
 /* Khi ở màn hình nhỏ (dưới 768px) */
@@ -25,5 +37,19 @@ body {
     width: 100%; /* Cho đường chia nằm ngang toàn bộ chiều rộng */
     height: 1px; /* Đặt chiều cao cho đường chia ngang */
     margin: 0.5rem 0; /* Thêm khoảng cách trên dưới nếu cần */
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-container {
+    padding: 0;
+  }
+
+  .logo-text {
+    padding-left: 8px;
+  }
+
+  .nav-right-menu {
+    padding-right: 8px;
   }
 }
