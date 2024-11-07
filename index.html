@@ -27,7 +27,7 @@
           style="height: 88px"
         >
           <div class="container-fluid">
-            <div class="d-flex align-items-center w-100">
+            <div class="d-flex align-items-center nav-custom">
               <button
                 class="btn d-md-none"
                 type="button"
@@ -44,7 +44,7 @@
                 href="#"
                 ><u>STUDY LINK</u></a
               >
-              <button class="btn invisible">
+              <button class="nav-hidden-button">
                 <span class="navbar-toggler-icon"></span>
               </button>
             </div>
@@ -56,59 +56,59 @@
               <div
                 class="ms-md-auto d-flex flex-column flex-md-row align-items-center gap-0 gap-md-3 gap-xl-5 pt-3 pt-md-0"
               >
-                <div class="order-1 order-md-0 w-100">
+                <div class="order-1 order-md-0 nav-list-item">
                   <ul class="navbar-nav mt-2 mt-md-0 align-items-md-center">
                     <div
                       class="divider-nav-menu d-none d-md-inline mx-md-2 mx-lg-3 mx-xl-4"
                     ></div>
                     <li class="nav-item">
                       <a class="nav-link text-start ps-4 ps-md-0 pe-0" href="#"
-                        >Home</a
+                        >講座案内</a
                       >
                     </li>
                     <div class="divider-nav-menu mx-md-2 mx-lg-3 mx-xl-4"></div>
                     <li class="nav-item">
                       <a class="nav-link text-start ps-4 ps-md-0 pe-0" href="#"
-                        >Document</a
+                        >受講プラン案内</a
                       >
                     </li>
                     <div class="divider-nav-menu mx-md-2 mx-lg-3 mx-xl-4"></div>
                     <li class="nav-item">
                       <a class="nav-link text-start ps-4 ps-md-0 pe-0" href="#"
-                        >Settings</a
+                        >利用案内</a
                       >
                     </li>
                     <div class="divider-nav-menu mx-md-2 mx-lg-3 mx-xl-4"></div>
                     <li class="nav-item">
                       <a class="nav-link text-start ps-4 ps-md-0 pe-0" href="#"
-                        >Info</a
+                        >よくある質問</a
                       >
                     </li>
                     <div class="divider-nav-menu mx-md-2 mx-lg-3 mx-xl-4"></div>
                     <li class="nav-item">
                       <a class="nav-link text-start ps-4 ps-md-0 pe-0" href="#"
-                        >About</a
+                        >お問い合わせ</a
                       >
                     </li>
                     <div class="divider-nav-menu d-inline d-md-none"></div>
                   </ul>
                 </div>
                 <div
-                  class="d-flex gap-2 gap-xl-3 order-0 order-md-1 w-100 px-4 px-md-0"
+                  class="d-flex gap-2 gap-xl-3 order-0 order-md-1 px-4 px-md-0 button-box-custom"
                 >
                   <button
                     type="button"
                     class="rounded-pill border border-2 border-primary bg-white text-primary flex-grow-1"
                     style="padding-left: 24px; padding-right: 24px"
                   >
-                    Login
+                    新規登録
                   </button>
                   <button
                     type="button"
                     class="btn rounded-pill bg-primary text-white flex-grow-1"
                     style="padding-left: 24px; padding-right: 24px"
                   >
-                    Register
+                    ログイン
                   </button>
                 </div>
               </div>
@@ -118,7 +118,7 @@
         <hr class="solid my-0" />
       </header>
 
-      <main>
+      <main style="display: flex; flex-direction: column">
         <!-- Banner -->
         <div class="full-height-container">
           <div class="content position-relative">
@@ -139,20 +139,59 @@
                 class="d-flex flex-column px-md-5 justify-content-center h-100 banner-text-background"
               >
                 <p class="text-warning mb-4 banner-text-content-title">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Eラーニング講座提供サービス
                 </p>
                 <p class="text-white mb-0 banner-text-content-value">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  これまでに150,000人以上が受請したeラーニング講座です。基本的なマナー講座から
                 </p>
                 <p class="text-white mb-0 banner-text-content-value">
-                  Aliquid, molestiae tempora rerum dicta magnam molestias magni
-                  blanditiis at ea repudiandae qui libero rem similique, in
-                  natus expedita officia neque non?
+                  Microsoft Office
+                  Specialistの資格認定講座、簿記・宅建などの各種資格対策講座を多数ご用意しております。
                 </p>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- <div class="">
+          <div class="w-100" style="padding: 0 200px">
+            <div class="d-flex flex-column">
+              <p style="font-size: large; font-weight: 600">
+                Seach course E-Learning
+              </p>
+              <div class="d-flex flex-row">
+                <div class="bg-warning" style="width: 3px"></div>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-4">エネルギー・環境問題 (10)</div>
+                    <div class="col-4">AI・データサイエンス (10)</div>
+                    <div class="col-4">VR・プログラミング・ゲーム (10)</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">
+                      まちづくり・スマートシティ・防災 (10)
+                    </div>
+                    <div class="col-4">EV・自動運転 (10)</div>
+                    <div class="col-4">自然・地球・数理 (10)</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">
+                      ライフサイエンス・創薬・コスメティクス (10)
+                    </div>
+                    <div class="col-4">脳・感性・アート (10)</div>
+                    <div class="col-4">ものづくり・デザイン (10)</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">ロボット (10)</div>
+                    <div class="col-4">ヘルスケア・スポーツ (10)</div>
+                    <div class="col-4">マテリアル (10)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-warning" style="height: 350px">AA</div> -->
       </main>
       <footer>
         <!-- Footer -->
