@@ -2,10 +2,10 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  margin: 0;
+  /* margin: 0;
   padding: 0;
   width: 100vw;
-  min-height: 100vh;
+  min-height: 100vh; */
   /* overflow: hidden; */
   box-sizing: border-box;
 }
@@ -32,20 +32,35 @@ body {
 .full-height-container {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 104px);
+  min-height: calc(100vh - 88px);
+  overflow: hidden;
 }
 
 .content {
   flex: 1;
   width: 100%;
-  /* background-color: #f5f5f5; */
 }
 
 .banner-text-content {
-  background-color: #2e3f55;
   opacity: 90%;
   width: 45%;
   height: 45%;
+}
+.banner-text-background {
+  background-color: #2e3f55;
+}
+.banner-image {
+  width: 85%;
+  height: 95%;
+  object-fit: cover;
+}
+
+.banner-text-content-title {
+  font-size: large;
+}
+
+.banner-text-content-value {
+  font-size: small;
 }
 
 @media (max-width: 1200px) {
@@ -62,24 +77,22 @@ body {
   }
 
   .banner-text-content {
-    background-color: #2e3f55;
+    /* background-color: #2e3f55; */
     opacity: 90%;
     width: 55%;
-    height: 45%;
   }
 }
 
 @media (max-width: 992px) {
   .banner-text-content {
-    background-color: #2e3f55;
+    /* background-color: #2e3f55; */
     opacity: 90%;
     width: 65%;
-    height: 45%;
   }
 }
 
 /* Khi ở màn hình nhỏ (dưới 768px) */
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .divider-nav-menu {
     border-left: none; /* Bỏ đường viền dọc */
     border-top: 1px solid #ababab; /* Thêm đường viền ngang */
@@ -88,18 +101,35 @@ body {
     margin: 0.5rem 0; /* Thêm khoảng cách trên dưới nếu cần */
   }
 
-  .banner-text-content {
-    background-color: #2e3f55;
-    opacity: 90%;
-    width: 100%;
-    height: 45%;
+  .offcanvas.offcanvas-start {
+    width: 320px !important;
   }
 
-  .banner-text-content-title {
-    font-size: large;
+  .banner-text-content {
+    opacity: 90%;
+    width: 100%;
+    height: auto;
+  }
+
+  .banner-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .banner-text-background {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.5rem;
   }
 
   .banner-text-content-value {
     font-size: small;
+  }
+}
+
+@media (max-width: 576px) {
+  .full-height-container {
+    min-height: calc(100vh - 88px - 100px);
   }
 }
