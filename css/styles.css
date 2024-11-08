@@ -259,7 +259,9 @@ body {
     width: 55%;
   }
 
-  .course-list {
+  .course-list,
+  .horizontal-scroll-container,
+  .popular-course-title {
     padding: 0 100px;
   }
 }
@@ -278,7 +280,9 @@ body {
     grid-template-columns: auto auto;
   }
 
-  .course-list {
+  .course-list,
+  .horizontal-scroll-container,
+  .popular-course-title {
     padding: 0 50px;
   }
 
@@ -340,8 +344,19 @@ body {
     width: 100%;
   }
 
-  .course-list {
+  .course-list,
+  .horizontal-scroll-container {
     padding: 0 1.5rem;
+    margin-bottom: 50px;
+  }
+
+  .popular-course-title {
+    padding: 0 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .popular-course {
+    margin-top: 0;
   }
 
   .grid-item {
@@ -354,6 +369,13 @@ body {
     min-height: calc(100vh - 88px - 100px);
   }
 
+  .course-list {
+    margin-bottom: 50px;
+  }
+
+  .popular-course-title {
+    margin-bottom: 0;
+  }
   .nav-custom {
     width: 100%;
   }
