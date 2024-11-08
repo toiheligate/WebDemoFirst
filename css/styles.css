@@ -90,8 +90,151 @@ body {
 
 .course-list {
   margin-top: 50px;
-  padding: 0 200px;
+  padding: 0 300px;
+  margin-bottom: 100px;
 }
+
+.popular-course {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.popular-course-title {
+  padding: 0 300px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.button.left {
+  border: 2px solid lightgray;
+  color: lightgray;
+}
+
+.button.left:hover {
+  background-color: lightgray;
+  color: white;
+}
+
+.button.right {
+  border: 2px solid orange;
+  color: orange;
+}
+
+.button.right:hover {
+  background-color: orange;
+  color: white;
+}
+.horizontal-scroll-container {
+  display: flex;
+  overflow-x: auto; /* Cho phép cuộn ngang */
+  white-space: nowrap;
+  padding-left: 300px;
+  gap: 30px; /* Khoảng cách giữa các mục */
+  scrollbar-width: thin; /* Giảm kích thước của thanh cuộn trên Firefox */
+}
+
+.item {
+  width: 350px; /* Đặt kích thước tối thiểu cho các mục */
+  min-height: 100px;
+  background-color: white;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  border-radius: 8px;
+  font-size: 18px;
+  flex-shrink: 0; /* Ngăn các mục bị co lại */
+  overflow: hidden;
+  padding-bottom: 24px;
+}
+
+.item > .thumbnail {
+  object-fit: cover;
+  aspect-ratio: 1.75;
+  max-width: 100%;
+  height: 200px;
+}
+
+.item > .title {
+  padding: 16px 0;
+  margin: 0;
+  color: #1a2d44;
+}
+
+.item > .category {
+  background-color: #0072b7; /* Màu nền xanh dương */
+  color: white; /* Màu chữ trắng */
+  padding: 4px 10px; /* Khoảng đệm */
+  font-size: 12px; /* Kích thước chữ */
+  border: 2px solid #0072b7;
+  border-radius: 2px; /* Bo góc nhẹ */
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.item > .category:hover {
+  background-color: white;
+  color: #0072b7;
+  border: 2px solid #0072b7;
+}
+
+.item > .info-container {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Khoảng cách giữa các nhóm */
+  color: #333;
+  font-size: 14px;
+  margin: 12px 0;
+}
+
+.item > .info-container > .info-item {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Khoảng cách giữa biểu tượng và văn bản */
+}
+
+.item > .info-container > .info-item > .icon {
+  font-size: 12px;
+  color: #888; /* Màu của biểu tượng */
+}
+
+.item > .content {
+  color: #1a2d44;
+  width: 100%;
+  font-size: 16px;
+  padding-top: 12px;
+  padding-bottom: 16px;
+  word-wrap: break-all;
+  white-space: normal;
+  margin: 0;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 5;
+  box-orient: vertical;
+}
+
+.item > .more {
+  font-size: 16px;
+  color: #1a2d44;
+}
+
 @media (max-width: 1400px) {
   .main-container {
     padding: 0;
