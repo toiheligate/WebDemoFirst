@@ -99,12 +99,14 @@
                   </ul>
                 </div>
                 <div
-                  class="d-flex gap-2 gap-xl-3 order-0 order-md-1 px-4 px-md-0 button-box-custom"
+                  class="order-0 order-md-1 px-4 px-md-0 button-box-custom"
+                  id="notLoggedIn"
                 >
                   <button
                     type="button"
                     class="rounded-pill border border-2 border-primary bg-white text-primary flex-grow-1"
                     style="padding-left: 24px; padding-right: 24px"
+                    onclick="login()"
                   >
                     新規登録
                   </button>
@@ -115,6 +117,59 @@
                   >
                     ログイン
                   </button>
+                </div>
+                <div class="logged-container" id="loggedIn">
+                  <div
+                    class="d-flex flex-column"
+                    style="font-size: 14px; font-weight: 500"
+                  >
+                    <p style="margin: 0">受講期間</p>
+                    <p style="margin: 0">2022/10/01 - 2023/10/01</p>
+                  </div>
+                  <div
+                    class="d-flex flex-column"
+                    style="font-size: 14px; font-weight: 500"
+                  >
+                    <p style="margin: 0">20単位プラン受講中</p>
+                    <p style="margin: 0; color: red">
+                      未受講效：10講座（單位）
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-warning rounded-pill"
+                    style="font-size: 12px; height: fit-content"
+                  >
+                    今すぐ受講▶▶
+                  </button>
+                  <div class="avatar-circle" style="width: 40px; height: 40px">
+                    <span class="fa">&#xf0f3;</span>
+                  </div>
+                  <div class="d-flex gap-2">
+                    <div
+                      class="avatar-circle"
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        background-color: #1a2d44;
+                      "
+                    >
+                      <span class="fa" style="color: white">&#xf007;</span>
+                    </div>
+                    <div
+                      class="d-flex flex-column gap-2"
+                      style="font-size: 12px"
+                    >
+                      <p style="margin: 0">受講者1</p>
+                      <div
+                        class="d-flex gap-2 align-items-center"
+                        onclick="logout()"
+                      >
+                        <p style="margin: 0">マイページ</p>
+                        <span class="fa">&#x25BC;</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -668,7 +723,7 @@
           </div>
           <div class="col-md-8">
             <div class="faq-item"></div>
-            <div class="faq-item">
+            <div class="faq-item active">
               <div class="question" onclick="toggleAnswer(this)">
                 <div class="avatar-circle" style="margin-right: 15px">Q</div>
                 <div
@@ -831,7 +886,9 @@
               </div>
             </div>
             <hr style="color: gray; margin: 0; height: 1px" />
-            <p style="font-size: 12px; margin-top: 1rem; color: gray;">Copyright © 2022 Jiho Inc. All rights reserved</p>
+            <p style="font-size: 12px; margin-top: 1rem; color: gray">
+              Copyright © 2022 Jiho Inc. All rights reserved
+            </p>
           </div>
         </div>
       </footer>

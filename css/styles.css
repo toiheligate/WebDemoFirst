@@ -316,7 +316,7 @@ body {
   flex-shrink: 0;
 }
 
-.faq-item .avatar-circle {
+.avatar-circle {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -379,6 +379,23 @@ body {
 .footer-content-grid-item {
   color: white;
   font-size: 12px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.button-box-custom {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.logged-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
 }
 
 @media (max-width: 1400px) {
@@ -469,10 +486,14 @@ body {
   .pricing-title {
     max-width: 90%;
   }
+
+  .button-box-custom {
+    gap: 1rem;
+  }
 }
 
 /* Khi ở màn hình nhỏ (dưới 768px) */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .divider-nav-menu {
     border-left: none; /* Bỏ đường viền dọc */
     border-top: 1px solid #ababab; /* Thêm đường viền ngang */
