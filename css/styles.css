@@ -527,6 +527,10 @@ body {
     margin-top: 50px;
     margin-bottom: 100px;
   }
+
+  .faq-item .question {
+    align-items: start;
+  }
 }
 
 @media (max-width: 576px) {
