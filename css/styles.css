@@ -21,6 +21,23 @@ body {
   padding-left: 16px;
 }
 
+.sign-in-button {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  border: 2px solid #1a2d44 !important;
+}
+
+.sign-up-button {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  background-color: #1a2d44 !important;
+}
+
+.sign-up-button:hover {
+  color: #1a2d44;
+  background-color: #fcb900 !important;
+}
+
 .nav-right-menu {
   padding-right: 48px;
 }
