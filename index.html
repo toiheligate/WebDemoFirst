@@ -34,7 +34,7 @@
           <div class="container-fluid">
             <div class="d-flex align-items-center nav-custom">
               <button
-                class="btn d-md-none"
+                class="btn d-lg-none"
                 type="button"
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasMenu"
@@ -45,7 +45,7 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <a
-                class="navbar-brand mx-0 flex-grow-1 text-center text-md-start fs-5 fs-md-3 logo-text"
+                class="navbar-brand mx-0 flex-grow-1 text-center text-lg-start fs-5 fs-md-3 logo-text"
                 href="#"
                 ><u>STUDY LINK</u></a
               >
@@ -54,7 +54,7 @@
               </button>
             </div>
             <div
-              class="offcanvas offcanvas-start nav-right-menu"
+              class="offcanvas-lg offcanvas-start nav-right-menu"
               tabindex="-1"
               id="offcanvasMenu"
             >
@@ -67,31 +67,41 @@
                       class="divider-nav-menu d-none d-md-inline mx-md-2 mx-lg-3 mx-xl-4"
                     ></div>
                     <li class="nav-item">
-                      <a class="nav-link text-start ps-4 ps-md-0 pe-0" href="#"
+                      <a
+                        class="nav-link text-start ps-4 ps-md-0 pe-0 scale-text"
+                        href="#"
                         >講座案内</a
                       >
                     </li>
                     <div class="divider-nav-menu mx-md-2 mx-lg-3 mx-xl-4"></div>
                     <li class="nav-item">
-                      <a class="nav-link text-start ps-4 ps-md-0 pe-0" href="#"
+                      <a
+                        class="nav-link text-start ps-4 ps-md-0 pe-0 scale-text"
+                        href="#"
                         >受講プラン案内</a
                       >
                     </li>
                     <div class="divider-nav-menu mx-md-2 mx-lg-3 mx-xl-4"></div>
                     <li class="nav-item">
-                      <a class="nav-link text-start ps-4 ps-md-0 pe-0" href="#"
+                      <a
+                        class="nav-link text-start ps-4 ps-md-0 pe-0 scale-text"
+                        href="#"
                         >利用案内</a
                       >
                     </li>
                     <div class="divider-nav-menu mx-md-2 mx-lg-3 mx-xl-4"></div>
                     <li class="nav-item">
-                      <a class="nav-link text-start ps-4 ps-md-0 pe-0" href="#"
+                      <a
+                        class="nav-link text-start ps-4 ps-md-0 pe-0 scale-text"
+                        href="#"
                         >よくある質問</a
                       >
                     </li>
                     <div class="divider-nav-menu mx-md-2 mx-lg-3 mx-xl-4"></div>
                     <li class="nav-item">
-                      <a class="nav-link text-start ps-4 ps-md-0 pe-0" href="#"
+                      <a
+                        class="nav-link text-start ps-4 ps-md-0 pe-0 scale-text"
+                        href="#"
                         >お問い合わせ</a
                       >
                     </li>
@@ -104,7 +114,7 @@
                 >
                   <button
                     type="button"
-                    class="rounded-pill border border-2 border-primary bg-white text-primary flex-grow-1"
+                    class="rounded-pill border border-2 border-primary bg-white text-primary flex-grow-1 scale-text"
                     style="padding-left: 24px; padding-right: 24px"
                     onclick="login()"
                   >
@@ -112,7 +122,7 @@
                   </button>
                   <button
                     type="button"
-                    class="btn rounded-pill bg-primary text-white flex-grow-1"
+                    class="btn rounded-pill bg-primary text-white flex-grow-1 scale-text"
                     style="padding-left: 24px; padding-right: 24px"
                   >
                     ログイン
@@ -120,8 +130,8 @@
                 </div>
                 <div class="logged-container" id="loggedIn">
                   <div
-                    class="d-flex flex-column"
-                    style="font-size: 14px; font-weight: 500"
+                    class="d-flex flex-column scale-text"
+                    style="font-weight: 500"
                   >
                     <p style="margin: 0">受講期間</p>
                     <p style="margin: 0">2022/10/01 - 2023/10/01</p>
@@ -130,15 +140,19 @@
                     class="d-flex flex-column"
                     style="font-size: 14px; font-weight: 500"
                   >
-                    <p style="margin: 0">20単位プラン受講中</p>
-                    <p style="margin: 0; color: red">
+                    <p class="scale-text">20単位プラン受講中</p>
+                    <p class="scale-text" style="color: red">
                       未受講效：10講座（單位）
                     </p>
                   </div>
                   <button
                     type="button"
-                    class="btn btn-warning rounded-pill"
-                    style="font-size: 12px; height: fit-content"
+                    class="btn btn-warning rounded-pill scale-text"
+                    style="
+                      font-size: 0.6vw;
+                      height: fit-content;
+                      flex-shrink: 0;
+                    "
                   >
                     今すぐ受講▶▶
                   </button>
@@ -161,12 +175,80 @@
                       style="font-size: 12px"
                     >
                       <p style="margin: 0">受講者1</p>
-                      <div
-                        class="d-flex gap-2 align-items-center"
-                        onclick="logout()"
+                      <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDarkDropdown"
+                        aria-controls="navbarNavDarkDropdown"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
                       >
-                        <p style="margin: 0">マイページ</p>
-                        <span class="fa">&#x25BC;</span>
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div
+                        class="collapse navbar-collapse"
+                        id="navbarNavDarkDropdown"
+                      >
+                        <ul class="navbar-nav">
+                          <li class="nav-item dropdown">
+                            <a
+                              class="nav-link dropdown-toggle"
+                              style="
+                                padding: 0;
+                                font-size: 12px;
+                                font-weight: 600;
+                              "
+                              href="#"
+                              id="navbarDarkDropdownMenuLink"
+                              role="button"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              マイページ
+                            </a>
+                            <ul
+                              class="dropdown-menu dropdown-menu-light"
+                              aria-labelledby="navbarDarkDropdownMenuLink"
+                            >
+                              <li>
+                                <div class="dropdown-item d-flex gap-2">
+                                  <span
+                                    ><i class="fa-regular fa-address-card"></i
+                                  ></span>
+                                  ューザー情報
+                                </div>
+                              </li>
+                              <li>
+                                <div class="dropdown-item d-flex gap-2">
+                                  <span
+                                    ><i class="fa-solid fa-pen-to-square"></i
+                                  ></span>
+                                  パスワード変更
+                                </div>
+                              </li>
+                              <li>
+                                <div class="dropdown-item d-flex gap-2">
+                                  <span><i class="fa-solid fa-inbox"></i></span>
+                                  購入履歴
+                                </div>
+                              </li>
+                              <li>
+                                <div
+                                  class="dropdown-item d-flex gap-2"
+                                  onclick="logout()"
+                                >
+                                  <span
+                                    ><i
+                                      class="fa-solid fa-right-from-bracket"
+                                    ></i
+                                  ></span>
+                                  ログアウト
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                   </div>

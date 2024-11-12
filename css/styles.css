@@ -398,6 +398,15 @@ body {
   align-items: center;
 }
 
+.scale-text {
+  margin: 0;
+  font-size: clamp(3px, 0.7vw, 24px) !important;
+}
+
+.dropdown-menu[data-bs-popper] {
+  left: -120% !important;
+}
+
 @media (max-width: 1400px) {
   .main-container {
     padding: 0;
@@ -448,7 +457,7 @@ body {
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991.98px) {
   .banner-text-content {
     opacity: 90%;
     width: 65%;
@@ -490,10 +499,38 @@ body {
   .button-box-custom {
     gap: 1rem;
   }
+  .navbar-expand-md .offcanvas {
+    visibility: hidden !important;
+  }
+
+  .offcanvas {
+    visibility: hidden !important;
+  }
+
+  .divider-nav-menu {
+    border-left: none; /* Bỏ đường viền dọc */
+    border-top: 1px solid #ababab; /* Thêm đường viền ngang */
+    width: 100%; /* Cho đường chia nằm ngang toàn bộ chiều rộng */
+    height: 1px; /* Đặt chiều cao cho đường chia ngang */
+    margin: 0.5rem 0; /* Thêm khoảng cách trên dưới nếu cần */
+  }
+
+  .nav-custom {
+    width: 100%;
+  }
+
+  .nav-hidden-button {
+    display: block;
+    visibility: hidden;
+  }
+
+  .nav-list-item {
+    width: 100%;
+  }
 }
 
 /* Khi ở màn hình nhỏ (dưới 768px) */
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   .divider-nav-menu {
     border-left: none; /* Bỏ đường viền dọc */
     border-top: 1px solid #ababab; /* Thêm đường viền ngang */
