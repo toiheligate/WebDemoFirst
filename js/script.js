@@ -8,6 +8,12 @@ function checkLoginStatus() {
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
   document.getElementById("notLoggedIn").classList.toggle("hidden", isLoggedIn);
   document.getElementById("loggedIn").classList.toggle("hidden", !isLoggedIn);
+  document
+    .getElementById("loggedInNotification")
+    .classList.toggle("hidden", !isLoggedIn);
+  document
+    .getElementById("nav-hidden-button")
+    .classList.toggle("hidden", isLoggedIn);
 }
 
 // Hàm đăng nhập (chỉ là ví dụ)
