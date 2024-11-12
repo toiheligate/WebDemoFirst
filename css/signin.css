@@ -22,13 +22,13 @@ body {
   border: 2px solid #1a2d44 !important;
 }
 
-.sign-up-button {
+.sign-in-button {
   padding-left: 24px !important;
   padding-right: 24px !important;
   background-color: #1a2d44 !important;
 }
 
-.sign-up-button:hover {
+.sign-in-button:hover {
   color: #1a2d44;
   background-color: #fcb900 !important;
 }
@@ -154,10 +154,145 @@ body {
   left: -120% !important;
 }
 
+/* End NAV AND FOOTER */
+
+.shrink-p {
+  margin: 0;
+}
+
+.body-container {
+  display: flex;
+  position: relative;
+  padding: 16px 0;
+}
+
+.big-logo-background {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.sign-in-form-container {
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw / 4);
+  margin-left: calc(100vw / 5.5);
+  position: relative;
+}
+
+.path-container {
+  display: flex;
+  flex-direction: row;
+  color: gray;
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+.sign-in-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+}
+
+/* Container cho form */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Style cho nhãn */
+.form-label {
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+/* Dấu sao đỏ */
+.required {
+  color: red;
+  margin-left: 4px;
+}
+
+/* Style cho input */
+.form-input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding-right: 36px; /* Để khoảng trống cho biểu tượng */
+}
+
+/* Style khi hover */
+.form-input:focus {
+  outline: none;
+  border-color: #aaa;
+}
+
+/* Icon toggle password */
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+}
+
+/* Checkbox container */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+.sign-in-form-button {
+  background-color: #dadde2 !important;
+  margin-bottom: 16px;
+}
+
+.forgot-text {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.can-login-text-group {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.can-login-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a2d44 !important;
+}
+
 @media (max-width: 1400px) {
   .main-container {
     padding: 0;
   }
+
+  /* End NAV AND FOOTER */
 }
 
 @media (max-width: 1200px) {
@@ -176,6 +311,8 @@ body {
   .footer-container {
     padding: 0 100px;
   }
+
+  /* End NAV AND FOOTER */
 }
 
 @media (max-width: 991.98px) {
@@ -236,6 +373,8 @@ body {
   .scale-text {
     font-size: clamp(12px, 0.7vw, 24px) !important;
   }
+
+  /* End NAV AND FOOTER */
 }
 
 /* Khi ở màn hình nhỏ (dưới 768px) */
@@ -276,10 +415,14 @@ body {
   .footer-content-grid {
     grid-template-columns: auto;
   }
+
+  /* End NAV AND FOOTER */
 }
 
 @media (max-width: 576px) {
   .nav-custom {
     width: 100%;
   }
+
+  /* End NAV AND FOOTER */
 }

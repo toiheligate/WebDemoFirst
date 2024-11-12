@@ -8,7 +8,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <link rel="stylesheet" href="../css/signup.css" />
+    <link rel="stylesheet" href="../css/signin.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -128,7 +128,7 @@
                   </button>
                   <a
                     type="button"
-                    class="btn rounded-pill text-white flex-grow-1 scale-text sign-up-button"
+                    class="btn rounded-pill text-white flex-grow-1 scale-text sign-in-button"
                     style="padding-left: 24px; padding-right: 24px"
                     href="#"
                   >
@@ -262,8 +262,64 @@
         </nav>
         <hr class="solid my-0" />
       </header>
+      <main style="display: flex; flex-direction: column">
+        <div class="body-container" style="height: 600px">
+          <img
+            class="big-logo-background"
+            src="../assets/big-logo.png"
+            alt="background"
+          />
 
-      <main style="display: flex; flex-direction: column"></main>
+          <div class="sign-in-form-container">
+            <div class="path-container">
+              <span><i class="fa-solid fa-house"></i></span>
+              <p class="shrink-p">\</p>
+              <p class="shrink-p" style="color: #1a2d44">ログイン</p>
+            </div>
+            <div class="sign-in-form">
+              <p class="shrink-p sign-in-title">ログイン</p>
+              <div class="form-group">
+                <label class="form-label"
+                  >メールアドレス: <span class="required">*</span></label
+                >
+                <input type="email" class="form-input" placeholder="" />
+              </div>
+              <div class="form-group">
+                <label class="form-label"
+                  >パスワード: <span class="required">*</span></label
+                >
+                <div class="input-container">
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-input"
+                    placeholder=""
+                  />
+                  <span
+                    toggle="#password"
+                    class="toggle-password fas fa-eye"
+                    onclick="togglePassword()"
+                  ></span>
+                </div>
+                <div class="checkbox-container">
+                  <input type="checkbox" id="remember" />
+                  <label for="remember">ログイン情報保存</label>
+                </div>
+              </div>
+              <button class="btn rounded-pill sign-in-form-button">
+                サインイン
+              </button>
+              <p class="shrink-p forgot-text">パスワード忘れた方？</p>
+              <div class="can-login-text-group">
+                <span><i class="fa-solid fa-circle-question"></i></span>
+                <a class="shrink-p can-login-text"
+                  >ログインできない方はこちら</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
       <footer>
         <!-- Footer -->
         <div class="footer-container">
@@ -295,7 +351,7 @@
       </footer>
     </div>
 
-    <script src="../js/signup.js"></script>
+    <script src="../js/signin.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
