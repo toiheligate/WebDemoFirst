@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 88px;
+  padding-right: 88px;
+}
+
+.logo-text {
+  padding-left: 16px;
+}
+
+.sign-in-button {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  border: 2px solid #1a2d44 !important;
+}
+
+.sign-up-button {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  background-color: #1a2d44 !important;
+}
+
+.sign-up-button:hover {
+  color: #1a2d44;
+  background-color: #fcb900 !important;
+}
+
+.nav-right-menu {
+  padding-right: 48px;
+}
+
+.divider-nav-menu {
+  border-left: 1px solid #ababab;
+  height: 8px;
+  width: 0;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.wrap-text {
+  width: 100%;
+  word-wrap: break-all;
+  white-space: normal;
+  margin: 0;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 5;
+  box-orient: vertical;
+}
+
+.icon-circle {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #1a2d44;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a2d44;
+  flex-shrink: 0;
+}
+
+.avatar-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a2d44;
+  background-color: #f5f5f5;
+  flex-shrink: 0;
+}
+
+.footer-container {
+  background-color: #363946;
+  padding: 0 300px;
+}
+
+.footer-content {
+  padding: 24px 0;
+  column-gap: 100px;
+}
+
+.footer-content-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  column-gap: 100px;
+  row-gap: 16px;
+}
+
+.footer-content-grid-item {
+  color: white;
+  font-size: 12px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.button-box-custom {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.logined-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.scale-text {
+  margin: 0;
+  font-size: clamp(8px, 0.7vw, 24px) !important;
+
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-weight: var(--bs-nav-link-font-weight);
+  color: var(--bs-nav-link-color);
+  text-decoration: none;
+  background: 0 0;
+  border: 0;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+}
+
+.dropdown-menu[data-bs-popper] {
+  left: -120% !important;
+}
+
+@media (max-width: 1400px) {
+  .main-container {
+    padding: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-container {
+    padding: 0;
+  }
+
+  .logo-text {
+    padding-left: 0px;
+  }
+
+  .nav-right-menu {
+    padding-right: 0px;
+  }
+
+  .footer-container {
+    padding: 0 100px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .footer-container {
+    padding: 0 50px;
+  }
+
+  .button-box-custom {
+    gap: 1rem;
+  }
+  .navbar-expand-md .offcanvas {
+    visibility: hidden !important;
+  }
+
+  .offcanvas {
+    visibility: hidden !important;
+  }
+
+  .divider-nav-menu {
+    border-left: none; /* Bỏ đường viền dọc */
+    border-top: 1px solid #ababab; /* Thêm đường viền ngang */
+    width: 100%; /* Cho đường chia nằm ngang toàn bộ chiều rộng */
+    height: 1px; /* Đặt chiều cao cho đường chia ngang */
+    margin: 0.5rem 0; /* Thêm khoảng cách trên dưới nếu cần */
+  }
+
+  .nav-custom {
+    width: 100%;
+  }
+
+  .nav-list-item {
+    width: 100%;
+  }
+
+  .logined-container {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .logined-item {
+    width: 100%;
+  }
+
+  .notification-icon {
+    display: none;
+  }
+
+  .course-info-nav {
+    background-color: #f5f6f8;
+    padding: 1.5rem;
+  }
+
+  .user-info-nav {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .scale-text {
+    font-size: clamp(12px, 0.7vw, 24px) !important;
+  }
+}
+
+/* Khi ở màn hình nhỏ (dưới 768px) */
+@media (max-width: 767.98px) {
+  .divider-nav-menu {
+    border-left: none; /* Bỏ đường viền dọc */
+    border-top: 1px solid #ababab; /* Thêm đường viền ngang */
+    width: 100%; /* Cho đường chia nằm ngang toàn bộ chiều rộng */
+    height: 1px; /* Đặt chiều cao cho đường chia ngang */
+    margin: 0.5rem 0; /* Thêm khoảng cách trên dưới nếu cần */
+  }
+
+  .offcanvas-lg.offcanvas-start {
+    width: 320px !important;
+  }
+
+  .nav-custom {
+    width: 100%;
+  }
+
+  .button-box-custom {
+    width: 100%;
+  }
+
+  .nav-list-item {
+    width: 100%;
+  }
+
+  .footer-container {
+    padding: 0 1.5rem;
+    margin-bottom: 50px;
+  }
+
+  .footer-content {
+    column-gap: 24px;
+  }
+
+  .footer-content-grid {
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-custom {
+    width: 100%;
+  }
+}

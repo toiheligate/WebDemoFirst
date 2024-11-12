@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Student Website</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="../css/signup.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- Bootstrap CSS-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="main-container">
+      <header>
+        <!-- Naviagtion Bar -->
+        <nav
+          class="navbar navbar-expand-lg nav-fill w-100"
+          style="height: 88px"
+        >
+          <div class="container-fluid">
+            <div class="d-flex align-items-center nav-custom">
+              <button
+                class="btn d-lg-none"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasMenu"
+                aria-controls="offcanvasMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <a
+                class="navbar-brand mx-0 flex-grow-1 text-center text-lg-start fs-5 fs-md-3 logo-text"
+                href="#"
+                ><u>STUDY LINK</u></a
+              >
+              <button
+                id="nav-hidden-button"
+                style="padding: 0.375rem 0.75rem; visibility: hidden"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div
+                class="avatar-circle d-lg-none"
+                style="width: 40px; height: 40px; margin: 0.375rem 0.75rem"
+                id="loggedInNotification"
+              >
+                <span class="fa">&#xf0f3;</span>
+              </div>
+            </div>
+            <div
+              class="offcanvas-lg offcanvas-start nav-right-menu"
+              tabindex="-1"
+              id="offcanvasMenu"
+            >
+              <div
+                class="ms-lg-auto d-flex flex-column-reverse flex-lg-row align-items-center gap-0 gap-lg-3 gap-xl-4 pt-3 pt-lg-0"
+              >
+                <div class="nav-list-item">
+                  <ul class="navbar-nav mt-2 mt-lg-0 align-items-lg-center">
+                    <div
+                      class="divider-nav-menu d-none d-md-inline mx-lg-3 mx-xl-4"
+                    ></div>
+                    <li class="nav-item">
+                      <a
+                        class="text-start ps-4 ps-lg-0 pe-0 scale-text"
+                        href="#"
+                        >講座案内</a
+                      >
+                    </li>
+                    <div class="divider-nav-menu mx-lg-3 mx-xl-4"></div>
+                    <li class="nav-item">
+                      <a
+                        class="text-start ps-4 ps-lg-0 pe-0 scale-text"
+                        href="#"
+                        >受講プラン案内</a
+                      >
+                    </li>
+                    <div class="divider-nav-menu mx-lg-3 mx-xl-4"></div>
+                    <li class="nav-item">
+                      <a
+                        class="text-start ps-4 ps-lg-0 pe-0 scale-text"
+                        href="#"
+                        >利用案内</a
+                      >
+                    </li>
+                    <div class="divider-nav-menu mx-lg-3 mx-xl-4"></div>
+                    <li class="nav-item">
+                      <a
+                        class="text-start ps-4 ps-lg-0 pe-0 scale-text"
+                        href="#"
+                        >よくある質問</a
+                      >
+                    </li>
+                    <div class="divider-nav-menu mx-lg-3 mx-xl-4"></div>
+                    <li class="nav-item">
+                      <a
+                        class="text-start ps-4 ps-lg-0 pe-0 scale-text"
+                        href="#"
+                        >お問い合わせ</a
+                      >
+                    </li>
+                    <div class="divider-nav-menu d-inline d-lg-none"></div>
+                  </ul>
+                </div>
+                <div class="px-4 px-lg-0 button-box-custom" id="notLoggedIn">
+                  <button
+                    type="button"
+                    class="rounded-pill bg-white flex-grow-1 scale-text sign-in-button"
+                    onclick="login()"
+                  >
+                    新規登録
+                  </button>
+                  <a
+                    type="button"
+                    class="btn rounded-pill text-white flex-grow-1 scale-text sign-up-button"
+                    style="padding-left: 24px; padding-right: 24px"
+                    href="#"
+                  >
+                    ログイン
+                  </a>
+                </div>
+                <div class="logined-container" id="loggedIn">
+                  <div
+                    class="d-flex flex-column flex-lg-row gap-3 logined-item course-info-nav"
+                  >
+                    <div
+                      class="d-flex flex-row flex-lg-column gap-2 gap-lg-0 scale-text"
+                      style="font-weight: 500"
+                    >
+                      <p style="margin: 0">受講期間</p>
+                      <p style="margin: 0">2022/10/01 - 2023/10/01</p>
+                    </div>
+                    <div
+                      class="d-flex flex-column"
+                      style="font-size: 14px; font-weight: 500"
+                    >
+                      <p class="scale-text">20単位プラン受講中</p>
+                      <p class="scale-text" style="color: red">
+                        未受講效：10講座（單位）
+                      </p>
+                    </div>
+
+                    <div>
+                      <button
+                        type="button"
+                        class="btn btn-warning rounded-pill scale-text"
+                        style="
+                          font-size: 0.6vw;
+                          height: fit-content;
+                          flex-shrink: 0;
+                        "
+                      >
+                        今すぐ受講▶▶
+                      </button>
+                    </div>
+                  </div>
+
+                  <div
+                    class="avatar-circle notification-icon"
+                    style="width: 40px; height: 40px"
+                  >
+                    <span class="fa">&#xf0f3;</span>
+                  </div>
+                  <div class="d-flex gap-2 logined-item user-info-nav">
+                    <div
+                      class="avatar-circle"
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        background-color: #1a2d44;
+                      "
+                    >
+                      <span class="fa" style="color: white">&#xf007;</span>
+                    </div>
+                    <div
+                      class="d-flex flex-column gap-2"
+                      style="font-size: 12px"
+                    >
+                      <p style="margin: 0">受講者1</p>
+                      <div
+                        class="collapse navbar-collapse show"
+                        id="navbarNavDarkDropdown"
+                      >
+                        <ul class="navbar-nav">
+                          <li class="nav-item dropdown">
+                            <a
+                              class="dropdown-toggle scale-text"
+                              style="padding: 0; font-weight: 600"
+                              href="#"
+                              id="navbarDarkDropdownMenuLink"
+                              role="button"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              マイページ
+                            </a>
+                            <ul
+                              class="dropdown-menu dropdown-menu-light"
+                              aria-labelledby="navbarDarkDropdownMenuLink"
+                            >
+                              <li>
+                                <div class="dropdown-item d-flex gap-2">
+                                  <span
+                                    ><i class="fa-regular fa-address-card"></i
+                                  ></span>
+                                  ューザー情報
+                                </div>
+                              </li>
+                              <li>
+                                <div class="dropdown-item d-flex gap-2">
+                                  <span
+                                    ><i class="fa-solid fa-pen-to-square"></i
+                                  ></span>
+                                  パスワード変更
+                                </div>
+                              </li>
+                              <li>
+                                <div class="dropdown-item d-flex gap-2">
+                                  <span><i class="fa-solid fa-inbox"></i></span>
+                                  購入履歴
+                                </div>
+                              </li>
+                              <li>
+                                <div
+                                  class="dropdown-item d-flex gap-2"
+                                  onclick="logout()"
+                                >
+                                  <span
+                                    ><i
+                                      class="fa-solid fa-right-from-bracket"
+                                    ></i
+                                  ></span>
+                                  ログアウト
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <hr class="solid my-0" />
+      </header>
+
+      <main style="display: flex; flex-direction: column"></main>
+      <footer>
+        <!-- Footer -->
+        <div class="footer-container">
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row footer-content">
+              <img
+                src="../assets/logo.png"
+                alt="logo"
+                width="95px"
+                height="95px"
+              />
+              <div class="d-flex align-items-center">
+                <div class="footer-content-grid">
+                  <div class="footer-content-grid-item">団体概要</div>
+                  <div class="footer-content-grid-item">個人情報保護方針</div>
+                  <div class="footer-content-grid-item">特定商取引法表示</div>
+                  <div class="footer-content-grid-item">利用規約</div>
+                  <div class="footer-content-grid-item">解約ポリシー</div>
+                  <div class="footer-content-grid-item">推奨環境</div>
+                </div>
+              </div>
+            </div>
+            <hr style="color: gray; margin: 0; height: 1px" />
+            <p style="font-size: 12px; margin-top: 1rem; color: gray">
+              Copyright © 2022 Jiho Inc. All rights reserved
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../js/signup.js"></script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
