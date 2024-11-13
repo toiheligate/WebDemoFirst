@@ -119,21 +119,21 @@
                   </ul>
                 </div>
                 <div class="px-4 px-lg-0 button-box-custom" id="notLoggedIn">
-                  <button
+                  <a
                     type="button"
-                    class="rounded-pill bg-white flex-grow-1 scale-text sign-in-button"
-                    onclick="login()"
+                    class="btn rounded-pill bg-white flex-grow-1 scale-text sign-in-button"
+                    href="pages/signin.html"
                   >
                     新規登録
-                  </button>
+                  </a>
                   <a
                     type="button"
                     class="btn rounded-pill text-white flex-grow-1 scale-text sign-in-button"
                     style="padding-left: 24px; padding-right: 24px"
-                    href="pages/signin.html"
+                    href="pages/register.html"
                   >
                     ログイン
-                </a>
+                  </a>
                 </div>
                 <div class="logined-container" id="loggedIn">
                   <div
@@ -223,7 +223,10 @@
                                 </div>
                               </li>
                               <li>
-                                <div class="dropdown-item d-flex gap-2" onclick="location.href='./pages/change-password.html';">
+                                <div
+                                  class="dropdown-item d-flex gap-2"
+                                  onclick="location.href='./pages/change-password.html';"
+                                >
                                   <span
                                     ><i class="fa-solid fa-pen-to-square"></i
                                   ></span>

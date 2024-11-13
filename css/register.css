@@ -16,19 +16,19 @@ body {
   padding-left: 16px;
 }
 
-.sign-in-button {
+.page-button {
   padding-left: 24px !important;
   padding-right: 24px !important;
   border: 2px solid #1a2d44 !important;
 }
 
-.sign-in-button {
+.page-button {
   padding-left: 24px !important;
   padding-right: 24px !important;
   background-color: #1a2d44 !important;
 }
 
-.sign-in-button:hover {
+.page-button:hover {
   color: #1a2d44;
   background-color: #fcb900 !important;
 }
@@ -164,6 +164,7 @@ body {
   display: flex;
   position: relative;
   padding: 16px 0;
+  margin-bottom: 104px;
 }
 
 .big-logo-background {
@@ -172,11 +173,11 @@ body {
   bottom: 0px;
 }
 
-.sign-in-form-container {
+.page-form-container {
   display: flex;
   flex-direction: column;
-  width: calc(100vw / 4);
-  margin-left: calc(100vw / 5.5);
+  width: calc(100vw * 3 / 5);
+  margin: 0 auto;
   position: relative;
 }
 
@@ -189,15 +190,29 @@ body {
   align-items: center;
 }
 
-.sign-in-form {
+.page-form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.sign-in-title {
+.page-title {
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 2.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.page-subtitle {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  width: 100%;
 }
 
 /* Container cho form */
@@ -214,78 +229,120 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.input-container {
-  position: relative;
-  margin-bottom: 16px;
-}
-
-/* Dấu sao đỏ */
-.required {
-  color: red;
-  margin-left: 4px;
-}
-
-/* Style cho input */
-.form-input {
+.steps-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
   width: 100%;
-  padding: 8px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
   font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
-  padding-right: 36px; /* Để khoảng trống cho biểu tượng */
+  color: #1a2d44;
+  background-color: #f2f3f4;
+  position: relative;
+  flex: 1;
+  text-align: center;
+  height: 50px; /* Đặt chiều cao cố định */
 }
 
-/* Style khi hover */
-.form-input:focus {
-  outline: none;
-  border-color: #aaa;
+.step.active {
+  background-color: #f8af3c;
+  color: #1a2d44;
 }
 
-/* Icon toggle password */
-.toggle-password {
+.step:not(:last-child)::after {
+  content: "";
   position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: #888;
+  right: -25px; /* Vị trí mũi tên nằm chính giữa */
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent; /* Độ cao của mũi tên khớp với chiều cao của .step */
+  border-bottom: 25px solid transparent;
+  border-left: 25px solid #f2f3f4; /* Màu nền của mũi tên */
+  z-index: 2;
 }
 
-/* Checkbox container */
+.step.active:not(:last-child)::after {
+  border-left-color: #f8af3c; /* Màu mũi tên cho bước đang hoạt động */
+}
+
+.step:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 25px solid white;
+  z-index: 1;
+}
+
+.register-information-box {
+  padding: 32px 16px;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.information-box {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 .checkbox-container {
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .checkbox-container input[type="checkbox"] {
   margin-right: 8px;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  vertical-align: middle;
 }
 
-.sign-in-form-button {
-  background-color: #dadde2 !important;
-  margin-bottom: 16px;
+.checkbox-container label {
+  font-size: 14px !important;
 }
 
-.forgot-text {
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-
-.can-login-text-group {
+.register-button-box {
   display: flex;
   flex-direction: row;
-  gap: 8px;
+  gap: 16px;
 }
 
-.can-login-text {
-  font-size: 14px;
-  font-weight: 500;
-  color: #1a2d44 !important;
+.register-left-button {
+  border: 1px solid #38789a !important;
+  padding: 12px 40px !important;
+  font-size: 14px !important;
+  color: #38789a !important;
+}
+
+.register-right-button {
+  border: 1px solid #fcb900 !important;
+  padding: 12px 40px !important;
+  font-size: 14px !important;
+  color: #fcb900 !important;
 }
 
 @media (max-width: 1400px) {
@@ -313,10 +370,15 @@ body {
     padding: 0 100px;
   }
 
-  /* End NAV AND FOOTER */
-
   .button-box-custom {
     gap: 1rem;
+  }
+
+  /* End NAV AND FOOTER */
+
+  .page-form-container {
+    width: calc(100vw / 2);
+    margin: 0 auto;
   }
 }
 
@@ -381,7 +443,7 @@ body {
 
   /* End NAV AND FOOTER */
 
-  .sign-in-form-container {
+  .page-form-container {
     width: calc(100vw / 2);
     margin: 0 auto;
   }
@@ -432,7 +494,7 @@ body {
 
   /* End NAV AND FOOTER */
 
-  .sign-in-form-container {
+  .page-form-container {
     width: calc(100vw);
     margin: 0 32px;
   }
