@@ -313,6 +313,10 @@ body {
   }
 
   /* End NAV AND FOOTER */
+
+  .button-box-custom {
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -375,6 +379,15 @@ body {
   }
 
   /* End NAV AND FOOTER */
+
+  .sign-in-form-container {
+    width: calc(100vw / 2);
+    margin: 0 auto;
+  }
+
+  .big-logo-background {
+    width: calc(100vw / 2);
+  }
 }
 
 /* Khi ở màn hình nhỏ (dưới 768px) */
@@ -417,6 +430,11 @@ body {
   }
 
   /* End NAV AND FOOTER */
+
+  .sign-in-form-container {
+    width: calc(100vw);
+    margin: 0 32px;
+  }
 }
 
 @media (max-width: 576px) {
