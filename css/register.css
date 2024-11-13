@@ -235,6 +235,8 @@ body {
   justify-content: center;
   max-width: 700px;
   width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .step {
@@ -259,7 +261,7 @@ body {
 .step:not(:last-child)::after {
   content: "";
   position: absolute;
-  right: -25px; /* Vị trí mũi tên nằm chính giữa */
+  right: -24px; /* Vị trí mũi tên nằm chính giữa */
   top: 0;
   bottom: 0;
   margin: auto;
@@ -278,7 +280,7 @@ body {
 .step:not(:first-child)::before {
   content: "";
   position: absolute;
-  left: 2px;
+  left: 1px;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -450,6 +452,48 @@ body {
 
   .big-logo-background {
     width: calc(100vw / 2);
+  }
+
+  .path-container {
+    margin-bottom: 32px;
+  }
+
+  .page-title {
+    margin-bottom: 16px;
+  }
+
+  .page-subtitle {
+    margin-bottom: 16px;
+  }
+
+  .step {
+    font-size: 12px;
+    height: 40px;
+  }
+
+  .step:not(:last-child)::after {
+    right: -20px;
+    border-top: 20px solid transparent; /* Độ cao của mũi tên khớp với chiều cao của .step */
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #f2f3f4; /* Màu nền của mũi tên */
+  }
+
+  .step:not(:first-child)::before {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid white;
+  }
+
+  .information-box {
+    width: 100%;
+  }
+
+  .register-button-box {
+    flex-direction: column;
+  }
+
+  .agreement-box {
+    margin: 0 auto;
   }
 }
 
