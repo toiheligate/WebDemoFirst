@@ -229,6 +229,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* Container for the progress bar */
 .steps-container {
   display: flex;
   align-items: center;
@@ -239,6 +240,7 @@ body {
   overflow: hidden;
 }
 
+/* Individual steps */
 .step {
   display: flex;
   align-items: center;
@@ -250,40 +252,51 @@ body {
   position: relative;
   flex: 1;
   text-align: center;
-  height: 50px; /* Đặt chiều cao cố định */
+  height: 50px; /* Fixed height */
 }
 
+/* Active step styling */
 .step.active {
   background-color: #f8af3c;
   color: #1a2d44;
 }
 
+.step.actived {
+  background-color: #1a2d44;
+  color: white;
+}
+
+/* Arrow for each step except the last one */
 .step:not(:last-child)::after {
   content: "";
   position: absolute;
-  right: -24px; /* Vị trí mũi tên nằm chính giữa */
-  top: 0;
-  bottom: 0;
-  margin: auto;
+  right: -25px; /* Adjust arrow position to center it */
+  top: 50%;
+  transform: translateY(-50%);
   width: 0;
   height: 0;
-  border-top: 25px solid transparent; /* Độ cao của mũi tên khớp với chiều cao của .step */
+  border-top: 25px solid transparent; /* Height of the arrow */
   border-bottom: 25px solid transparent;
-  border-left: 25px solid #f2f3f4; /* Màu nền của mũi tên */
+  border-left: 25px solid #f2f3f4; /* Background color of arrow */
   z-index: 2;
 }
 
+/* Arrow color for active steps */
 .step.active:not(:last-child)::after {
-  border-left-color: #f8af3c; /* Màu mũi tên cho bước đang hoạt động */
+  border-left-color: #f8af3c; /* Arrow color for active step */
 }
 
+.step.actived:not(:last-child)::after {
+  border-left-color: #1a2d44; /* Arrow color for active step */
+}
+
+/* Small triangle to create separation effect */
 .step:not(:first-child)::before {
   content: "";
   position: absolute;
-  left: 1px;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 0;
   height: 0;
   border-top: 25px solid transparent;
@@ -292,7 +305,15 @@ body {
   z-index: 1;
 }
 
-.register-information-box {
+.step img {
+  display: none;
+}
+
+.step.actived img {
+  display: block;
+}
+
+.register-privacy-policy-box {
   padding: 32px 16px;
   width: 100%;
   border: 1px solid lightgray;
@@ -347,6 +368,87 @@ body {
   color: #fcb900 !important;
 }
 
+.register-email-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.register-email-box {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 56px 72px;
+  font-size: 14px;
+}
+
+.input-group-container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Dấu sao đỏ */
+.required {
+  color: red;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #ababab;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style khi hover */
+.form-input:focus {
+  outline: none;
+  border-color: #aaa;
+}
+
+.next-previus-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 36px;
+  width: 100%;
+}
+
+.next-previus-button p {
+  font-size: 14px;
+}
+
+.register-by-company-complete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 64px;
+}
+
+.company-complete-message {
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.company-complete-button {
+  background-color: #f8af3c !important;
+  padding: 8px 56px !important;
+  font-size: 14px !important;
+}
+
 @media (max-width: 1400px) {
   .main-container {
     padding: 0;
@@ -379,7 +481,7 @@ body {
   /* End NAV AND FOOTER */
 
   .page-form-container {
-    width: calc(100vw / 2);
+    width: calc(100vw * 0.7);
     margin: 0 auto;
   }
 }
@@ -444,9 +546,11 @@ body {
   }
 
   /* End NAV AND FOOTER */
-
+  .body-container {
+    margin-bottom: 32px;
+  }
   .page-form-container {
-    width: calc(100vw / 2);
+    width: calc(100vw * 0.7);
     margin: 0 auto;
   }
 
@@ -460,28 +564,49 @@ body {
 
   .page-title {
     margin-bottom: 16px;
+    font-size: 24px;
   }
 
   .page-subtitle {
     margin-bottom: 16px;
+    font-size: 20px;
   }
 
   .step {
     font-size: 12px;
     height: 40px;
+    padding: 0;
+  }
+
+  .step:not(:first-child) {
+    padding-left: 16px;
   }
 
   .step:not(:last-child)::after {
-    right: -20px;
-    border-top: 20px solid transparent; /* Độ cao của mũi tên khớp với chiều cao của .step */
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid #f2f3f4; /* Màu nền của mũi tên */
+    right: -12px;
+    border-top: 25px solid transparent; /* Độ cao của mũi tên khớp với chiều cao của .step */
+    border-bottom: 25px solid transparent;
+    border-left: 12px solid #f2f3f4; /* Màu nền của mũi tên */
   }
 
   .step:not(:first-child)::before {
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid white;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 12px solid white;
+  }
+
+  .step img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .checkbox-container input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  .checkbox-container label {
+    font-size: 12px !important;
   }
 
   .information-box {
@@ -492,8 +617,16 @@ body {
     flex-direction: column;
   }
 
+  .register-button-box button {
+    font-size: 12px !important;
+  }
+
   .agreement-box {
     margin: 0 auto;
+  }
+
+  .input-group-container {
+    flex-direction: column;
   }
 }
 
@@ -541,6 +674,10 @@ body {
   .page-form-container {
     width: calc(100vw);
     margin: 0 32px;
+  }
+
+  .register-email-box {
+    padding: 16px;
   }
 }
 

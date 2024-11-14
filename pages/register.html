@@ -135,7 +135,7 @@
                     ログイン
                   </a>
                 </div>
-                <div class="logined-container" id="loggedIn">
+                <div class="logined-container hidden" id="loggedIn">
                   <div
                     class="d-flex flex-column flex-lg-row gap-3 logined-item course-info-nav"
                   >
@@ -280,12 +280,44 @@
             <div class="page-form">
               <p class="shrink-p page-title">新規アカウント登録</p>
               <div class="steps-container">
-                <div class="step active">1. 利用規約</div>
-                <div class="step">2. 情報登録</div>
-                <div class="step">3. 登録完了</div>
+                <div class="step active">
+                  <img
+                    src="../assets/check.png"
+                    alt=""
+                    width="20px"
+                    height="20px"
+                    style="margin-right: 8px"
+                  />
+                  1. 利用規約
+                </div>
+                <div class="step">
+                  <img
+                    src="../assets/check.png"
+                    alt=""
+                    width="20px"
+                    height="20px"
+                    style="margin-right: 8px"
+                  />
+                  2. 情報登録
+                </div>
+                <div class="step">
+                  <img
+                    src="../assets/check.png"
+                    alt=""
+                    width="20px"
+                    height="20px"
+                    style="margin-right: 8px"
+                  />
+                  3. 登録完了
+                </div>
               </div>
-              <p class="shrink-p page-subtitle">ご登録前の確認事項</p>
-              <div class="register-information-box">
+              <p class="shrink-p page-subtitle" id="page-subtitle">
+                ご登録前の確認事項
+              </p>
+              <div
+                id="register-privacy-policy-box"
+                class="register-privacy-policy-box"
+              >
                 <div class="information-box">
                   <div class="d-flex flex-column gap-2 agreement-box">
                     <div class="checkbox-container">
@@ -311,14 +343,111 @@
                     </div>
                   </div>
                   <div class="register-button-box">
-                    <button class="btn rounded-pill register-left-button">
+                    <button
+                      onclick="nextStep()"
+                      class="btn rounded-pill register-left-button"
+                    >
                       個人負担で受講される方
                     </button>
-                    <button class="btn rounded-pill register-right-button">
+                    <button
+                      onclick="nextStep()"
+                      class="btn rounded-pill register-right-button"
+                    >
                       会社負担で受講される方
                     </button>
                   </div>
                 </div>
+              </div>
+              <div
+                id="register-email-container"
+                class="register-email-container hidden"
+              >
+                <div class="register-email-box">
+                  <div class="input-group-container">
+                    <label for="course-code" style="flex: 0 0 30%"
+                      >受講コード：<span class="required">*</span></label
+                    >
+                    <div class="input-box" style="flex: 0 0 70%">
+                      <input type="text" class="form-input" id="course-code" />
+                      <p class="shrink-p">
+                        ※会社負担で受講される方は、上記へ入力してください。ご不明の場合は勤務先へお問合せください。
+                      </p>
+                    </div>
+                  </div>
+                  <div class="input-group-container">
+                    <label for="email-address" style="flex: 0 0 30%"
+                      >メールアドレス：<span class="required">*</span></label
+                    >
+                    <div class="input-box" style="flex: 0 0 70%">
+                      <input
+                        type="text"
+                        class="form-input"
+                        id="email-address"
+                      />
+                      <p class="shrink-p">
+                        ※ログインする時にログインIDとして使用します。
+                      </p>
+                    </div>
+                  </div>
+                  <div class="input-group-container">
+                    <label for="confirm-email-address" style="flex: 0 0 30%"
+                      >メールアドレスの確認：<span class="required"
+                        >*</span
+                      ></label
+                    >
+                    <div class="input-box" style="flex: 0 0 70%">
+                      <input
+                        type="text"
+                        class="form-input"
+                        id="confirm-email-address"
+                      />
+                    </div>
+                  </div>
+
+                  <p class="shrink-p" style="text-align: center; color: red">
+                    ※ドメイン指定受備されている方は【@mail.studylink.jp】を許可してください。
+                  </p>
+                </div>
+                <div class="next-previus-button">
+                  <div
+                    id="prevBtn"
+                    class="d-flex gap-2 align-items-center"
+                    onclick="prevStep()"
+                  >
+                    <button class="btn border border-dark rounded-circle">
+                      &#8592;
+                    </button>
+                    <p class="shrink-p">前の</p>
+                  </div>
+                  <div
+                    id="nextBtn"
+                    class="d-flex rounded-pill justify-content-center align-items-center px-2"
+                    style="background-color: #dadde2"
+                    onclick="nextStep()"
+                  >
+                    <p class="shrink-p px-5">送信</p>
+                    <p class="shrink-p">&#8594;</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="register-by-company-complete"
+                class="register-by-company-complete hidden"
+              >
+                <span
+                  class="fa-regular fa-envelope"
+                  style="font-size: 65px"
+                ></span>
+                <p class="shrink-p company-complete-message">
+                  メールを送しましたので、ご確認ください。<br />
+                  送メール内のURLから受講者情報の登録を完了してください。
+                </p>
+                <button
+                  class="btn rounded-pill company-complete-button"
+                  onclick="location.href='../index.html'"
+                >
+                  ホームページへ戻る
+                </button>
               </div>
             </div>
           </div>
