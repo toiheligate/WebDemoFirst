@@ -344,13 +344,13 @@
                   </div>
                   <div class="register-button-box">
                     <button
-                      onclick="nextStep()"
+                      onclick="nextStep(0)"
                       class="btn rounded-pill register-left-button"
                     >
                       個人負担で受講される方
                     </button>
                     <button
-                      onclick="nextStep()"
+                      onclick="nextStep(1)"
                       class="btn rounded-pill register-right-button"
                     >
                       会社負担で受講される方
@@ -364,10 +364,10 @@
               >
                 <div class="register-email-box">
                   <div class="input-group-container">
-                    <label for="course-code" style="flex: 0 0 30%"
+                    <label for="course-code" style="flex: 1 1 30%"
                       >受講コード：<span class="required">*</span></label
                     >
-                    <div class="input-box" style="flex: 0 0 70%">
+                    <div class="input-box" style="flex: 1 1 70%">
                       <input type="text" class="form-input" id="course-code" />
                       <p class="shrink-p">
                         ※会社負担で受講される方は、上記へ入力してください。ご不明の場合は勤務先へお問合せください。
@@ -375,10 +375,10 @@
                     </div>
                   </div>
                   <div class="input-group-container">
-                    <label for="email-address" style="flex: 0 0 30%"
+                    <label for="email-address" style="flex: 1 1 30%"
                       >メールアドレス：<span class="required">*</span></label
                     >
-                    <div class="input-box" style="flex: 0 0 70%">
+                    <div class="input-box" style="flex: 1 1 70%">
                       <input
                         type="text"
                         class="form-input"
@@ -390,12 +390,12 @@
                     </div>
                   </div>
                   <div class="input-group-container">
-                    <label for="confirm-email-address" style="flex: 0 0 30%"
+                    <label for="confirm-email-address" style="flex: 1 1 30%"
                       >メールアドレスの確認：<span class="required"
                         >*</span
                       ></label
                     >
-                    <div class="input-box" style="flex: 0 0 70%">
+                    <div class="input-box" style="flex: 1 1 70%">
                       <input
                         type="text"
                         class="form-input"
@@ -448,6 +448,337 @@
                 >
                   ホームページへ戻る
                 </button>
+              </div>
+              <div id="individual-register" class="individual-register hidden">
+                <div class="individual-register-information">
+                  <div class="twin-input-group">
+                    <div class="input-group-container">
+                      <label
+                        id="main-individual-title"
+                        for="last-name"
+                        style="max-width: 223px; flex: 1"
+                        >姓<span class="required">*</span></label
+                      >
+                      <input
+                        type="text"
+                        placeholder=" "
+                        class="form-input"
+                        id="last-name"
+                      />
+                    </div>
+                    <div class="input-group-container">
+                      <label style="max-width: 223px; flex: 1"
+                        >名<span class="required">*</span></label
+                      >
+                      <input type="text" placeholder=" " class="form-input" />
+                    </div>
+                  </div>
+                  <hr style="margin: 0; height: 1px" />
+                  <div class="twin-input-group">
+                    <div class="input-group-container">
+                      <label style="max-width: 223px; flex: 1"
+                        >姓（フリガナ）<span class="required">*</span></label
+                      >
+                      <input type="text" placeholder=" " class="form-input" />
+                    </div>
+                    <div class="input-group-container">
+                      <label for="first-name" style="max-width: 223px; flex: 1"
+                        >名（フリガナ）<span class="required">*</span></label
+                      >
+                      <input
+                        type="text"
+                        placeholder=" "
+                        class="form-input"
+                        id="first-name"
+                      />
+                    </div>
+                  </div>
+                  <hr style="margin: 0; height: 1px" />
+                  <div class="input-group-container">
+                    <label class="sub-individual-title"
+                      >所属会社名<span class="required">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-input"
+                      value="CompanyA"
+                      placeholder=" "
+                    />
+                  </div>
+                  <hr style="margin: 0; height: 1px" />
+                  <div class="input-group-container">
+                    <label for="sex" class="sub-individual-title"
+                      >性別<span class="required">*</span></label
+                    >
+                    <select class="form-input form-select" id="sex" name="sex">
+                      <option selected>選択して下さい</option>
+                      <option value="volvo">Volvo</option>
+                      <option value="saab">Saab</option>
+                      <option value="fiat">Fiat</option>
+                      <option value="audi">Audi</option>
+                    </select>
+                  </div>
+                  <hr style="margin: 0; height: 1px" />
+                  <div class="input-group-container">
+                    <label class="sub-individual-title"
+                      >所属会社名<span class="required">*</span></label
+                    >
+                    <div
+                      class="date-input-container"
+                      style="flex: 1"
+                      onclick="openDatePicker()"
+                    >
+                      <input
+                        type="text"
+                        id="dateInput"
+                        class="date-input"
+                        placeholder="dd/mm/yyyy"
+                        onclick="this.type='date'"
+                        onblur="if(!this.value) this.type='text'"
+                      />
+                      <span class="calendar-icon"
+                        ><i class="fa-regular fa-calendar"></i
+                      ></span>
+                    </div>
+                  </div>
+                  <hr style="margin: 0; height: 1px" />
+                  <div class="input-group-container">
+                    <label class="sub-individual-title"
+                      >メールアドレス<span class="required">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-input"
+                      value="studylink@gmail.com"
+                      placeholder=" "
+                    />
+                  </div>
+                  <hr style="margin: 0; height: 1px" />
+                  <div class="input-group-container">
+                    <label class="sub-individual-title"
+                      >ログインパスワード<span class="required">*</span></label
+                    >
+                    <div
+                      class="d-flex flex-fill align-items-center justify-content-center full-width-box"
+                    >
+                      <div class="password-container">
+                        <input
+                          type="password"
+                          id="login-password"
+                          class="form-input"
+                          placeholder=" "
+                        />
+                        <span
+                          toggle="#login-password"
+                          class="toggle-password toggle-login-password fas fa-eye-slash"
+                          onclick="togglePassword(`login-password`)"
+                        ></span>
+                      </div>
+                      <i
+                        class="fa-solid fa-circle-check"
+                        style="color: green; font-size: 20px; padding: 0 32px"
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="input-group-container">
+                    <label class="sub-individual-title"
+                      >ログインパスワード確認<span class="required"
+                        >*</span
+                      ></label
+                    >
+                    <div
+                      class="d-flex flex-fill align-items-center justify-content-center full-width-box"
+                    >
+                      <div class="password-container">
+                        <input
+                          type="password"
+                          id="confirm-login-password"
+                          class="form-input"
+                          placeholder=" "
+                        />
+                        <span
+                          toggle="#confirm-login-password"
+                          class="toggle-password toggle-confirm-login-password fas fa-eye-slash"
+                          onclick="togglePassword(`confirm-login-password`)"
+                        ></span>
+                      </div>
+                      <i
+                        class="fa-solid fa-circle-xmark"
+                        style="color: red; font-size: 20px; padding: 0 32px"
+                      ></i>
+                    </div>
+                  </div>
+                  <hr style="margin: 0; height: 1px" />
+                  <div class="input-group-container" style="align-items: start">
+                    <label class="sub-individual-title"
+                      >薬剤師名簿登録番号<span class="required">*</span></label
+                    >
+                    <div
+                      class="d-flex flex-column flex-fill gap-2 full-width-box"
+                    >
+                      <div
+                        class="d-flex flex-fill align-items-center justify-content-center"
+                      >
+                        <div class="password-container">
+                          <input
+                            type="password"
+                            id="pharmacist-number"
+                            class="form-input"
+                            placeholder=" "
+                          />
+                          <span
+                            toggle="#pharmacist-number"
+                            class="toggle-password toggle-pharmacist-number fas fa-eye-slash"
+                            onclick="togglePassword(`pharmacist-number`)"
+                          ></span>
+                        </div>
+                        <i
+                          class="fa-solid fa-circle-xmark"
+                          style="color: red; font-size: 20px; padding: 0 32px"
+                        ></i>
+                      </div>
+                      <p class="shrink-p" style="color: red">
+                        ※再度、薬剤師名簿登録番号に間違いがないかご確認ください。
+                      </p>
+                    </div>
+                  </div>
+                  <hr style="margin: 0; height: 1px" />
+                  <div class="input-group-container">
+                    <label class="sub-individual-title"
+                      >薬剤師名簿登録番号確認<span class="required"
+                        >*</span
+                      ></label
+                    >
+                    <div
+                      class="d-flex flex-fill align-items-center justify-content-center full-width-box"
+                    >
+                      <div class="password-container">
+                        <input
+                          type="password"
+                          id="pharmacist-number-confirm"
+                          class="form-input"
+                          placeholder=" "
+                        />
+                        <span
+                          toggle="#pharmacist-number-confirm"
+                          class="toggle-password toggle-pharmacist-number-confirm fas fa-eye-slash"
+                          onclick="togglePassword(`pharmacist-number-confirm`)"
+                        ></span>
+                      </div>
+                      <i
+                        class="fa-solid fa-circle-check"
+                        style="color: green; font-size: 20px; padding: 0 32px"
+                      ></i>
+                    </div>
+                  </div>
+                  <hr style="margin: 0; height: 1px" />
+                  <div class="input-group-container">
+                    <label for="sex" class="sub-individual-title"
+                      >沖/外選扒<span class="required">*</span></label
+                    >
+                    <select class="form-input form-select">
+                      <option selected="">選択なし</option>
+                      <option value="volvo">Volvo</option>
+                      <option value="saab">Saab</option>
+                      <option value="fiat">Fiat</option>
+                      <option value="audi">Audi</option>
+                    </select>
+                  </div>
+                  <hr style="margin: 0; height: 1px" />
+                  <div class="input-group-container">
+                    <label class="sub-individual-title"
+                      >電話番号<span class="required">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-input"
+                      value=""
+                      placeholder=" "
+                    />
+                  </div>
+                  <hr style="margin: 0; height: 1px" />
+                  <div class="input-group-container">
+                    <label class="sub-individual-title"
+                      >郵便番号<span class="required">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-input"
+                      value=""
+                      placeholder=" "
+                    />
+                  </div>
+                  <hr style="margin: 0; height: 1px" />
+                  <div class="input-group-container">
+                    <label for="sex" class="sub-individual-title"
+                      >都道府県<span class="required">*</span></label
+                    >
+                    <select class="form-input form-select">
+                      <option selected="">選択して下さい</option>
+                      <option value="volvo">Volvo</option>
+                      <option value="saab">Saab</option>
+                      <option value="fiat">Fiat</option>
+                      <option value="audi">Audi</option>
+                    </select>
+                  </div>
+                  <hr style="margin: 0; height: 1px" />
+                  <div class="input-group-container">
+                    <label class="sub-individual-title"
+                      >住所<span class="required">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-input"
+                      value=""
+                      placeholder=" "
+                    />
+                  </div>
+                  <hr style="margin: 0; height: 1px" />
+                  <div class="input-group-container">
+                    <label for="sex" class="sub-individual-title"
+                      >勤務業態<span class="required">*</span></label
+                    >
+                    <select class="form-input form-select">
+                      <option selected="">選択して下さい</option>
+                      <option value="volvo">Volvo</option>
+                      <option value="saab">Saab</option>
+                      <option value="fiat">Fiat</option>
+                      <option value="audi">Audi</option>
+                    </select>
+                  </div>
+                  <hr style="margin: 0; height: 1px" />
+                  <div class="input-group-container" style="align-items: start">
+                    <label class="sub-individual-title"
+                      >取得を希望する楽剤師認定制度<span class="required"
+                        >*</span
+                      ></label
+                    >
+                    <div class="d-flex flex-column gap-2" style="flex: 1">
+                      <div class="checkbox-container">
+                        <input type="checkbox" id="check1" />
+                        <label for="check1">研修認定薬剤師</label>
+                      </div>
+                      <div class="checkbox-container">
+                        <input type="checkbox" id="check2" />
+                        <label for="check2">精神薬学会認定薬剤師</label>
+                      </div>
+                      <p class="shrink-p" style="color: red">
+                        ※日本精神薬学会会員様のみ学会認定の単位対象となります
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                  <div
+                    id="nextBtn"
+                    class="d-flex rounded-pill justify-content-center align-items-center px-2"
+                    style="background-color: #dadde2; height: 48px"
+                    onclick="nextStep()"
+                  >
+                    <p class="shrink-p px-5">登録完了</p>
+                    <p class="shrink-p">&#8594;</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

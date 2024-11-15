@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
+:root {
+  /* Biến được tính toán và gán lại giá trị trong JS */
+  --individual-title-width: 223px;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
@@ -408,6 +413,8 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
   box-sizing: border-box;
+  background-color: white;
+  font-size: 14px;
 }
 
 /* Style khi hover */
@@ -447,6 +454,115 @@ body {
   background-color: #f8af3c !important;
   padding: 8px 56px !important;
   font-size: 14px !important;
+}
+
+.individual-register {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 48px;
+}
+
+.individual-register-information {
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  background-color: #f5f6f8;
+  width: 100%;
+  padding: 56px 72px;
+  font-size: 14px;
+  gap: 16px;
+}
+
+.twin-input-group {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 56px;
+}
+
+.twin-input-group .input-group-container {
+  flex: 1 1 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.individual-register-information .form-input {
+  flex: 1;
+}
+
+.individual-register-information
+  input[type="text"].form-input:not(:placeholder-shown) {
+  background-color: #f5f3f0;
+}
+
+.individual-register-information
+  input.form-input:not(:placeholder-shown):focus {
+  background-color: white;
+}
+
+.individual-register-information .input-group-container {
+  align-items: center;
+}
+
+.sub-individual-title {
+  max-width: var(--individual-title-width);
+  flex: 2;
+}
+
+.form-select {
+  font-size: 14px !important;
+  height: 43px;
+}
+
+.form-select:focus {
+  outline: none !important;
+  border-color: #aaa;
+}
+
+.date-input-container {
+  position: relative;
+  max-width: 223px;
+  cursor: pointer;
+}
+
+.date-input {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: none;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+  display: none; /* Ẩn icon lịch mặc định của trình duyệt */
+}
+
+.calendar-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #666;
+  pointer-events: none;
+}
+
+.password-container {
+  position: relative;
+  flex: 1;
+}
+/* Icon toggle password */
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
 }
 
 @media (max-width: 1400px) {
@@ -628,6 +744,19 @@ body {
   .input-group-container {
     flex-direction: column;
   }
+
+  .twin-input-group {
+    gap: 16px;
+  }
+
+  .individual-register-information .input-group-container {
+    align-items: start;
+    gap: 8px;
+  }
+
+  .full-width-box {
+    width: 100%;
+  }
 }
 
 /* Khi ở màn hình nhỏ (dưới 768px) */
@@ -678,6 +807,10 @@ body {
 
   .register-email-box {
     padding: 16px;
+  }
+
+  .individual-register-information {
+    padding: 24px 32px;
   }
 }
 

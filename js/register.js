@@ -26,13 +26,20 @@ function logout() {
 // Kiểm tra trạng thái khi tải trang
 checkLoginStatus();
 
+const RegisterBy = Object.freeze({
+  INDIVIDUAL: Symbol(0),
+  COMPANY: Symbol(1),
+});
+
 let registerCurrentStep = 0;
+let registerBy = RegisterBy.INDIVIDUAL;
 const steps = document.querySelectorAll(".step");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const subTitle = document.getElementById("page-subtitle");
 const privacyAndPolicy = document.getElementById("register-privacy-policy-box");
 const emailRegister = document.getElementById("register-email-container");
+const individualRegister = document.getElementById("individual-register");
 const companyComplete = document.getElementById("register-by-company-complete");
 
 function updateStep() {
@@ -59,16 +66,30 @@ function updateStep() {
       companyComplete.classList.add("hidden");
       break;
     case 1:
-      subTitle.textContent = "メールアドレス入力";
       privacyAndPolicy.classList.add("hidden");
-      emailRegister.classList.remove("hidden");
       companyComplete.classList.add("hidden");
+      switch (registerBy) {
+        case RegisterBy.INDIVIDUAL:
+          subTitle.textContent = "情報登録";
+          emailRegister.classList.add("hidden");
+          individualRegister.classList.remove("hidden");
+          updateBoxWidths();
+          break;
+        case RegisterBy.COMPANY:
+          subTitle.textContent = "メールアドレス入力";
+          emailRegister.classList.remove("hidden");
+          individualRegister.classList.add("hidden");
+          break;
+        default:
+          break;
+      }
       break;
     case 2:
       subTitle.classList.add("hidden");
       privacyAndPolicy.classList.add("hidden");
       emailRegister.classList.add("hidden");
       companyComplete.classList.remove("hidden");
+      individualRegister.classList.add("hidden");
       break;
     default:
       break;
@@ -78,7 +99,15 @@ function updateStep() {
   nextBtn.disabled = registerCurrentStep === steps.length - 1;
 }
 
-function nextStep() {
+function nextStep(register) {
+  if (register != null) {
+    if (register === 0) {
+      registerBy = RegisterBy.INDIVIDUAL;
+    } else {
+      registerBy = RegisterBy.COMPANY;
+    }
+  }
+
   if (registerCurrentStep < steps.length - 1) {
     registerCurrentStep++;
     updateStep();
@@ -93,3 +122,41 @@ function prevStep() {
 }
 
 updateStep();
+
+function updateBoxWidths() {
+  const individualTitleWidth = document.getElementById(
+    "main-individual-title"
+  ).offsetWidth;
+
+  if (window.innerWidth <= 991.98) {
+    document.documentElement.style.setProperty(
+      "--individual-title-width",
+      `100%`
+    );
+  } else {
+    document.documentElement.style.setProperty(
+      "--individual-title-width",
+      `${individualTitleWidth}px`
+    );
+  }
+}
+
+window.addEventListener("resize", updateBoxWidths);
+
+function openDatePicker() {
+  document.getElementById("dateInput").showPicker(); // Mở date picker
+}
+
+function togglePassword(classId) {
+  const passwordInput = document.getElementById(`${classId}`);
+  const toggleIcon = document.querySelector(`.toggle-${classId}`);
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    toggleIcon.classList.remove("fa-eye-slash");
+    toggleIcon.classList.add("fa-eye");
+  } else {
+    passwordInput.type = "password";
+    toggleIcon.classList.remove("fa-eye");
+    toggleIcon.classList.add("fa-eye-slash");
+  }
+}
