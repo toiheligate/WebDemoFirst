@@ -41,6 +41,9 @@ const privacyAndPolicy = document.getElementById("register-privacy-policy-box");
 const emailRegister = document.getElementById("register-email-container");
 const individualRegister = document.getElementById("individual-register");
 const companyComplete = document.getElementById("register-by-company-complete");
+const individualComplete = document.getElementById(
+  "register-by-individual-complete"
+);
 
 function updateStep() {
   steps.forEach((step, index) => {
@@ -64,10 +67,12 @@ function updateStep() {
       privacyAndPolicy.classList.remove("hidden");
       emailRegister.classList.add("hidden");
       companyComplete.classList.add("hidden");
+      individualComplete.classList.add("hidden");
       break;
     case 1:
       privacyAndPolicy.classList.add("hidden");
       companyComplete.classList.add("hidden");
+      individualComplete.classList.add("hidden");
       switch (registerBy) {
         case RegisterBy.INDIVIDUAL:
           subTitle.textContent = "情報登録";
@@ -90,6 +95,18 @@ function updateStep() {
       emailRegister.classList.add("hidden");
       companyComplete.classList.remove("hidden");
       individualRegister.classList.add("hidden");
+      switch (registerBy) {
+        case RegisterBy.INDIVIDUAL:
+          individualComplete.classList.remove("hidden");
+          companyComplete.classList.add("hidden");
+          break;
+        case RegisterBy.COMPANY:
+          individualComplete.classList.add("hidden");
+          companyComplete.classList.remove("hidden");
+          break;
+        default:
+          break;
+      }
       break;
     default:
       break;

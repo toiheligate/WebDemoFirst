@@ -442,7 +442,14 @@ body {
   margin-top: 64px;
 }
 
-.company-complete-message {
+.register-by-individual-complete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 64px;
+}
+
+.complete-message {
   margin-top: 40px;
   text-align: center;
   margin-bottom: 32px;
@@ -450,7 +457,7 @@ body {
   font-weight: 600;
 }
 
-.company-complete-button {
+.complete-button {
   background-color: #f8af3c !important;
   padding: 8px 56px !important;
   font-size: 14px !important;
@@ -563,6 +570,19 @@ body {
   transform: translateY(-50%);
   cursor: pointer;
   color: #888;
+}
+
+.input-verify-icon {
+  font-size: 20px;
+  padding: 0 32px;
+}
+
+.input-verify-icon.fa-circle-check {
+  color: green;
+}
+
+.input-verify-icon.fa-circle-xmark {
+  color: red;
 }
 
 @media (max-width: 1400px) {
@@ -757,6 +777,10 @@ body {
   .full-width-box {
     width: 100%;
   }
+
+  .date-input-container {
+    max-width: none;
+  }
 }
 
 /* Khi ở màn hình nhỏ (dưới 768px) */
@@ -802,7 +826,7 @@ body {
 
   .page-form-container {
     width: calc(100vw);
-    margin: 0 32px;
+    margin: 0 16px;
   }
 
   .register-email-box {
@@ -811,6 +835,10 @@ body {
 
   .individual-register-information {
     padding: 24px 32px;
+  }
+
+  .input-verify-icon {
+    padding: 0 12px;
   }
 }
 

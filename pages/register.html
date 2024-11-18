@@ -213,6 +213,7 @@
                             <ul
                               class="dropdown-menu dropdown-menu-light"
                               aria-labelledby="navbarDarkDropdownMenuLink"
+                              style="font-size: 14px; font-weight: 400"
                             >
                               <li>
                                 <div class="dropdown-item d-flex gap-2">
@@ -438,12 +439,12 @@
                   class="fa-regular fa-envelope"
                   style="font-size: 65px"
                 ></span>
-                <p class="shrink-p company-complete-message">
+                <p class="shrink-p complete-message">
                   メールを送しましたので、ご確認ください。<br />
                   送メール内のURLから受講者情報の登録を完了してください。
                 </p>
                 <button
-                  class="btn rounded-pill company-complete-button"
+                  class="btn rounded-pill complete-button"
                   onclick="location.href='../index.html'"
                 >
                   ホームページへ戻る
@@ -467,10 +468,15 @@
                       />
                     </div>
                     <div class="input-group-container">
-                      <label style="max-width: 223px; flex: 1"
+                      <label for="name" style="max-width: 223px; flex: 1"
                         >名<span class="required">*</span></label
                       >
-                      <input type="text" placeholder=" " class="form-input" />
+                      <input
+                        id="name"
+                        type="text"
+                        placeholder=" "
+                        class="form-input"
+                      />
                     </div>
                   </div>
                   <hr style="margin: 0; height: 1px" />
@@ -524,7 +530,7 @@
                       >所属会社名<span class="required">*</span></label
                     >
                     <div
-                      class="date-input-container"
+                      class="date-input-container full-width-box"
                       style="flex: 1"
                       onclick="openDatePicker()"
                     >
@@ -574,10 +580,7 @@
                           onclick="togglePassword(`login-password`)"
                         ></span>
                       </div>
-                      <i
-                        class="fa-solid fa-circle-check"
-                        style="color: green; font-size: 20px; padding: 0 32px"
-                      ></i>
+                      <i class="fa-solid fa-circle-check input-verify-icon"></i>
                     </div>
                   </div>
                   <div class="input-group-container">
@@ -602,10 +605,7 @@
                           onclick="togglePassword(`confirm-login-password`)"
                         ></span>
                       </div>
-                      <i
-                        class="fa-solid fa-circle-xmark"
-                        style="color: red; font-size: 20px; padding: 0 32px"
-                      ></i>
+                      <i class="fa-solid fa-circle-xmark input-verify-icon"></i>
                     </div>
                   </div>
                   <hr style="margin: 0; height: 1px" />
@@ -633,8 +633,7 @@
                           ></span>
                         </div>
                         <i
-                          class="fa-solid fa-circle-xmark"
-                          style="color: red; font-size: 20px; padding: 0 32px"
+                          class="fa-solid fa-circle-xmark input-verify-icon"
                         ></i>
                       </div>
                       <p class="shrink-p" style="color: red">
@@ -665,10 +664,7 @@
                           onclick="togglePassword(`pharmacist-number-confirm`)"
                         ></span>
                       </div>
-                      <i
-                        class="fa-solid fa-circle-check"
-                        style="color: green; font-size: 20px; padding: 0 32px"
-                      ></i>
+                      <i class="fa-solid fa-circle-check input-verify-icon"></i>
                     </div>
                   </div>
                   <hr style="margin: 0; height: 1px" />
@@ -779,6 +775,25 @@
                     <p class="shrink-p">&#8594;</p>
                   </div>
                 </div>
+              </div>
+              <div
+                id="register-by-individual-complete"
+                class="register-by-individual-complete hidden"
+              >
+                <span
+                  class="fa-regular fa-circle-check"
+                  style="font-size: 65px"
+                ></span>
+                <p class="shrink-p complete-message">
+                  ご登録いただきありがとうございます。<br />
+                  登録メールアドレス完了メールを送しました。
+                </p>
+                <button
+                  class="btn rounded-pill complete-button"
+                  onclick="location.href='signin.html'"
+                >
+                  サインイン
+                </button>
               </div>
             </div>
           </div>
